@@ -1,0 +1,76 @@
+{
+  "name": "@local/dsh-feeling",
+  "version": "0.1.5",
+  "private": true,
+  "type": "module",
+  "description": "给模型一具会疼的身体：痛觉、七情、六欲、好感度，全部 1-100，可开关、可麻醉。支持 DeepSeek Harness 与 md-memory-harness。",
+  "license": "MIT",
+  "author": "yxlh123",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yxlh123/dsh-feeling.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "memory-harness",
+    "affect",
+    "emotion"
+  ],
+  "icon": "icon.svg",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/zh.json",
+    "locale/en.json",
+    "vendor/cosmokit.mjs",
+    "vendor/schemastery.mjs",
+    "vendor/LICENSE-cosmokit",
+    "vendor/LICENSE-schemastery",
+    "harness-plugins/feeling.py",
+    "harness-plugins/feeling.ui.html",
+    "harness-plugins/feeling.ui.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.1-rc.3"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.1-rc.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

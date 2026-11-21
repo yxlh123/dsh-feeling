@@ -1,0 +1,3 @@
+- insert:
+    - id: feeling
+      name: '@local/dsh-feeling'
